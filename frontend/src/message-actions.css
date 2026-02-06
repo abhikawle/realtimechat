@@ -1,0 +1,202 @@
+/* ==================== MESSAGE ACTIONS (EDIT/DELETE) ==================== */
+
+.message-actions {
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  margin-left: auto;
+}
+
+.message:hover .message-actions {
+  opacity: 1;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.edit-btn:hover {
+  background: #fff3cd;
+}
+
+.delete-btn:hover {
+  background: #f8d7da;
+}
+
+.message-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.edit-input {
+  padding: 10px 12px;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  resize: none;
+  min-height: 50px;
+  max-height: 100px;
+}
+
+.edit-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.edit-save,
+.edit-cancel {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.edit-save {
+  background: #667eea;
+  color: white;
+}
+
+.edit-save:hover {
+  background: #5568d3;
+}
+
+.edit-cancel {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.edit-cancel:hover {
+  background: #d0d0d0;
+}
+
+.edited-tag {
+  font-size: 11px;
+  color: #999;
+  margin-left: 6px;
+  font-style: italic;
+}
+
+/* ==================== ROOM HISTORY SIDEBAR ==================== */
+
+.room-history {
+  width: 200px;
+  padding: 20px;
+  background: white;
+  border-left: 1px solid #e0e0e0;
+  overflow-y: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-history-header {
+  margin-bottom: 15px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.room-history-header h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.room-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.room-history-item {
+  padding: 10px 12px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.room-history-item:hover {
+  background: #efefef;
+  transform: translateX(-3px);
+}
+
+.room-history-item:active {
+  transform: translateX(-5px);
+}
+
+.room-icon {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.room-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.no-history {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* ==================== RESPONSIVE ROOM HISTORY ==================== */
+
+@media (max-width: 1024px) {
+  .room-history {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .room-history {
+    display: none;
+  }
+
+  .message-actions {
+    opacity: 1 !important;
+  }
+}
